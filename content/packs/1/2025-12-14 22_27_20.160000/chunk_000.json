@@ -1,0 +1,2268 @@
+{
+  "variables": {
+    "kindness": {
+      "min": 0,
+      "max": 10
+    },
+    "charm": {
+      "min": 0,
+      "max": 10
+    },
+    "boldness": {
+      "min": 0,
+      "max": 10
+    },
+    "dexterity": {
+      "min": 0,
+      "max": 10
+    },
+    "perception": {
+      "min": 0,
+      "max": 10
+    },
+    "resilience": {
+      "min": 0,
+      "max": 10
+    },
+    "vitality": {
+      "min": 0,
+      "max": 10
+    }
+  },
+  "status": [
+    {
+      "status": 1,
+      "content": NaN,
+      "type": "bar",
+      "title": "Karakter",
+      "description": NaN,
+      "condition": "stage != 1",
+      "source": null
+    },
+    {
+      "status": 1,
+      "content": 1.0,
+      "type": null,
+      "title": "Kebaikan Hati",
+      "description": NaN,
+      "condition": null,
+      "source": "kindness"
+    },
+    {
+      "status": 1,
+      "content": 2.0,
+      "type": null,
+      "title": "Pesona",
+      "description": NaN,
+      "condition": null,
+      "source": "charm"
+    },
+    {
+      "status": 1,
+      "content": 3.0,
+      "type": null,
+      "title": "Keberanian",
+      "description": NaN,
+      "condition": null,
+      "source": "boldness"
+    },
+    {
+      "status": 1,
+      "content": 4.0,
+      "type": null,
+      "title": "Keterampilan",
+      "description": NaN,
+      "condition": null,
+      "source": "dexterity"
+    },
+    {
+      "status": 1,
+      "content": 5.0,
+      "type": null,
+      "title": "Kepekaan",
+      "description": NaN,
+      "condition": null,
+      "source": "perception"
+    },
+    {
+      "status": 1,
+      "content": 6.0,
+      "type": null,
+      "title": "Ketahanan Mental",
+      "description": NaN,
+      "condition": null,
+      "source": "resilience"
+    },
+    {
+      "status": 1,
+      "content": 7.0,
+      "type": null,
+      "title": "Ketahanan Fisik",
+      "description": NaN,
+      "condition": null,
+      "source": "vitality"
+    }
+  ],
+  "stages": {
+    "1": {
+      "events": [
+        {
+          "stage": 1,
+          "_step": 1,
+          "_branch": null,
+          "type": "auto",
+          "title": "Prolog",
+          "description": "Di kerajaan yang jauh, hiduplah seorang gadis bernama Cinderella yang diperlakukan semena-mena oleh ibu tiri dan saudari tirinya. Ia bekerja tanpa henti, disiksa, dihina. Namun, ia tetap menyimpan harapan kecil, bahwa suatu saat hidupnya akan berubah.",
+          "condition_src": "",
+          "condition_ir": {
+            "t": "var",
+            "name": "nan"
+          },
+          "effect_src": "",
+          "effect_ir": [],
+          "route_src": "_step+=1",
+          "route_ir": [
+            {
+              "op": "+=",
+              "var": "_step",
+              "expr": {
+                "t": "num",
+                "v": 1
+              }
+            }
+          ],
+          "options": []
+        },
+        {
+          "stage": 1,
+          "_step": 2,
+          "_branch": null,
+          "type": "multiple",
+          "title": "Kelebihan",
+          "description": "Apa saja kelebihan yang kamu miliki untuk menghadapi ini semua?",
+          "condition_src": "",
+          "condition_ir": {
+            "t": "var",
+            "name": "nan"
+          },
+          "effect_src": "",
+          "effect_ir": [],
+          "route_src": "_step+=1",
+          "route_ir": [
+            {
+              "op": "+=",
+              "var": "_step",
+              "expr": {
+                "t": "num",
+                "v": 1
+              }
+            }
+          ],
+          "options": [
+            {
+              "stage": 1,
+              "_step": 2,
+              "_branch": null,
+              "option": 1,
+              "type": null,
+              "title": "Kebaikan Hati",
+              "description": "Mudah mendapat bantuan dan dukungan sosial maupun magis.",
+              "condition_src": "",
+              "condition_ir": {
+                "t": "var",
+                "name": "nan"
+              },
+              "effect_src": "_kindness=1; _count+=1",
+              "effect_ir": [
+                {
+                  "op": "=",
+                  "var": "_kindness",
+                  "expr": {
+                    "t": "num",
+                    "v": 1
+                  }
+                },
+                {
+                  "op": "+=",
+                  "var": "_count",
+                  "expr": {
+                    "t": "num",
+                    "v": 1
+                  }
+                }
+              ],
+              "route_src": "",
+              "route_ir": []
+            },
+            {
+              "stage": 1,
+              "_step": 2,
+              "_branch": null,
+              "option": 2,
+              "type": null,
+              "title": "Pesona",
+              "description": "Mudah memikat orang dan sukses dalam interaksi sosial.",
+              "condition_src": "",
+              "condition_ir": {
+                "t": "var",
+                "name": "nan"
+              },
+              "effect_src": "_charm=1; _count+=1",
+              "effect_ir": [
+                {
+                  "op": "=",
+                  "var": "_charm",
+                  "expr": {
+                    "t": "num",
+                    "v": 1
+                  }
+                },
+                {
+                  "op": "+=",
+                  "var": "_count",
+                  "expr": {
+                    "t": "num",
+                    "v": 1
+                  }
+                }
+              ],
+              "route_src": "",
+              "route_ir": []
+            },
+            {
+              "stage": 1,
+              "_step": 2,
+              "_branch": null,
+              "option": 3,
+              "type": null,
+              "title": "Keberanian",
+              "description": "Membuka pilihan aksi berani dan menghadapi ketidakadilan.",
+              "condition_src": "",
+              "condition_ir": {
+                "t": "var",
+                "name": "nan"
+              },
+              "effect_src": "_boldness=1; _count+=1",
+              "effect_ir": [
+                {
+                  "op": "=",
+                  "var": "_boldness",
+                  "expr": {
+                    "t": "num",
+                    "v": 1
+                  }
+                },
+                {
+                  "op": "+=",
+                  "var": "_count",
+                  "expr": {
+                    "t": "num",
+                    "v": 1
+                  }
+                }
+              ],
+              "route_src": "",
+              "route_ir": []
+            },
+            {
+              "stage": 1,
+              "_step": 2,
+              "_branch": null,
+              "option": 4,
+              "type": null,
+              "title": "Keterampilan",
+              "description": "Luwes bergerak, cepat bekerja, dan jarang melakukan kesalahan.",
+              "condition_src": "",
+              "condition_ir": {
+                "t": "var",
+                "name": "nan"
+              },
+              "effect_src": "_dexterity=1; _count+=1",
+              "effect_ir": [
+                {
+                  "op": "=",
+                  "var": "_dexterity",
+                  "expr": {
+                    "t": "num",
+                    "v": 1
+                  }
+                },
+                {
+                  "op": "+=",
+                  "var": "_count",
+                  "expr": {
+                    "t": "num",
+                    "v": 1
+                  }
+                }
+              ],
+              "route_src": "",
+              "route_ir": []
+            },
+            {
+              "stage": 1,
+              "_step": 2,
+              "_branch": null,
+              "option": 5,
+              "type": null,
+              "title": "Kepekaan",
+              "description": "Cepat membaca situasi, menemukan peluang, dan menghindari bahaya.",
+              "condition_src": "",
+              "condition_ir": {
+                "t": "var",
+                "name": "nan"
+              },
+              "effect_src": "_perception=1; _count+=1",
+              "effect_ir": [
+                {
+                  "op": "=",
+                  "var": "_perception",
+                  "expr": {
+                    "t": "num",
+                    "v": 1
+                  }
+                },
+                {
+                  "op": "+=",
+                  "var": "_count",
+                  "expr": {
+                    "t": "num",
+                    "v": 1
+                  }
+                }
+              ],
+              "route_src": "",
+              "route_ir": []
+            },
+            {
+              "stage": 1,
+              "_step": 2,
+              "_branch": null,
+              "option": 6,
+              "type": null,
+              "title": "Ketahanan Mental",
+              "description": "Lebih tenang dalam menghadapi tekanan emosional dan sosial",
+              "condition_src": "",
+              "condition_ir": {
+                "t": "var",
+                "name": "nan"
+              },
+              "effect_src": "_resilience=1; _count+=1",
+              "effect_ir": [
+                {
+                  "op": "=",
+                  "var": "_resilience",
+                  "expr": {
+                    "t": "num",
+                    "v": 1
+                  }
+                },
+                {
+                  "op": "+=",
+                  "var": "_count",
+                  "expr": {
+                    "t": "num",
+                    "v": 1
+                  }
+                }
+              ],
+              "route_src": "",
+              "route_ir": []
+            },
+            {
+              "stage": 1,
+              "_step": 2,
+              "_branch": null,
+              "option": 7,
+              "type": null,
+              "title": "Ketahanan Fisik",
+              "description": "Stamina besar, tahan sakit, lebih kuat, dan aman dari kondisi kritis.",
+              "condition_src": "",
+              "condition_ir": {
+                "t": "var",
+                "name": "nan"
+              },
+              "effect_src": "_vitality=1; _count+=1",
+              "effect_ir": [
+                {
+                  "op": "=",
+                  "var": "_vitality",
+                  "expr": {
+                    "t": "num",
+                    "v": 1
+                  }
+                },
+                {
+                  "op": "+=",
+                  "var": "_count",
+                  "expr": {
+                    "t": "num",
+                    "v": 1
+                  }
+                }
+              ],
+              "route_src": "",
+              "route_ir": []
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "_step": 3,
+          "_branch": null,
+          "type": "auto",
+          "title": "Evaluasi",
+          "description": null,
+          "condition_src": "",
+          "condition_ir": {
+            "t": "var",
+            "name": "nan"
+          },
+          "effect_src": "_bonus = 6-_count",
+          "effect_ir": [
+            {
+              "op": "=",
+              "var": "_bonus",
+              "expr": {
+                "t": "bin",
+                "op": "-",
+                "l": {
+                  "t": "num",
+                  "v": 6
+                },
+                "r": {
+                  "t": "var",
+                  "name": "_count"
+                }
+              }
+            }
+          ],
+          "route_src": "_step+=1",
+          "route_ir": [
+            {
+              "op": "+=",
+              "var": "_step",
+              "expr": {
+                "t": "num",
+                "v": 1
+              }
+            }
+          ],
+          "options": [
+            {
+              "stage": 1,
+              "_step": 3,
+              "_branch": null,
+              "option": 1,
+              "type": null,
+              "title": "Kamu klaim tidak punya kekurangan",
+              "description": "Kepercayaan diri berlebih bisa jadi petaka. Kenali dirimu lebih baik",
+              "condition_src": "_count==7",
+              "condition_ir": {
+                "t": "cmp",
+                "op": "==",
+                "l": {
+                  "t": "var",
+                  "name": "_count"
+                },
+                "r": {
+                  "t": "num",
+                  "v": 7
+                }
+              },
+              "effect_src": "",
+              "effect_ir": [],
+              "route_src": "",
+              "route_ir": []
+            },
+            {
+              "stage": 1,
+              "_step": 3,
+              "_branch": null,
+              "option": 2,
+              "type": null,
+              "title": "Kamu fleksibel dan serba bisa",
+              "description": "Gunakan itu sebagai keunggulanmu.",
+              "condition_src": "_count==5 || _count==6",
+              "condition_ir": {
+                "t": "bin",
+                "op": "||",
+                "l": {
+                  "t": "cmp",
+                  "op": "==",
+                  "l": {
+                    "t": "var",
+                    "name": "_count"
+                  },
+                  "r": {
+                    "t": "num",
+                    "v": 5
+                  }
+                },
+                "r": {
+                  "t": "cmp",
+                  "op": "==",
+                  "l": {
+                    "t": "var",
+                    "name": "_count"
+                  },
+                  "r": {
+                    "t": "num",
+                    "v": 6
+                  }
+                }
+              },
+              "effect_src": "",
+              "effect_ir": [],
+              "route_src": "",
+              "route_ir": []
+            },
+            {
+              "stage": 1,
+              "_step": 3,
+              "_branch": null,
+              "option": 3,
+              "type": null,
+              "title": "Kamu mengenali dirimu dengan baik",
+              "description": "Itu membuat langkahmu lebih baik.",
+              "condition_src": "_count==3 || _count==4",
+              "condition_ir": {
+                "t": "bin",
+                "op": "||",
+                "l": {
+                  "t": "cmp",
+                  "op": "==",
+                  "l": {
+                    "t": "var",
+                    "name": "_count"
+                  },
+                  "r": {
+                    "t": "num",
+                    "v": 3
+                  }
+                },
+                "r": {
+                  "t": "cmp",
+                  "op": "==",
+                  "l": {
+                    "t": "var",
+                    "name": "_count"
+                  },
+                  "r": {
+                    "t": "num",
+                    "v": 4
+                  }
+                }
+              },
+              "effect_src": "",
+              "effect_ir": [],
+              "route_src": "",
+              "route_ir": []
+            },
+            {
+              "stage": 1,
+              "_step": 3,
+              "_branch": null,
+              "option": 4,
+              "type": null,
+              "title": "Kamu memiliki kelebihan spesial",
+              "description": "Maksimalkan dalam situasi yang tepat.",
+              "condition_src": "_count==1 || _count==2",
+              "condition_ir": {
+                "t": "bin",
+                "op": "||",
+                "l": {
+                  "t": "cmp",
+                  "op": "==",
+                  "l": {
+                    "t": "var",
+                    "name": "_count"
+                  },
+                  "r": {
+                    "t": "num",
+                    "v": 1
+                  }
+                },
+                "r": {
+                  "t": "cmp",
+                  "op": "==",
+                  "l": {
+                    "t": "var",
+                    "name": "_count"
+                  },
+                  "r": {
+                    "t": "num",
+                    "v": 2
+                  }
+                }
+              },
+              "effect_src": "",
+              "effect_ir": [],
+              "route_src": "",
+              "route_ir": []
+            },
+            {
+              "stage": 1,
+              "_step": 3,
+              "_branch": null,
+              "option": 5,
+              "type": null,
+              "title": "Kamu merasa tidak punya kelebihan",
+              "description": "Kenali dirimu dan kelebihanmu, sebagai bekal menghadapi semua ini.",
+              "condition_src": "_count==0",
+              "condition_ir": {
+                "t": "cmp",
+                "op": "==",
+                "l": {
+                  "t": "var",
+                  "name": "_count"
+                },
+                "r": {
+                  "t": "num",
+                  "v": 0
+                }
+              },
+              "effect_src": "",
+              "effect_ir": [],
+              "route_src": "",
+              "route_ir": []
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "_step": 4,
+          "_branch": null,
+          "type": "single",
+          "title": "Kelebihan Utama",
+          "description": "Apa kelebihan utama yang paling kamu andalkan?",
+          "condition_src": "",
+          "condition_ir": {
+            "t": "var",
+            "name": "nan"
+          },
+          "effect_src": "",
+          "effect_ir": [],
+          "route_src": "_step+=1",
+          "route_ir": [
+            {
+              "op": "+=",
+              "var": "_step",
+              "expr": {
+                "t": "num",
+                "v": 1
+              }
+            }
+          ],
+          "options": [
+            {
+              "stage": 1,
+              "_step": 4,
+              "_branch": null,
+              "option": 1,
+              "type": null,
+              "title": "Kebaikan Hati",
+              "description": "Mudah mendapat bantuan dan dukungan sosial maupun magis.",
+              "condition_src": "_kindness==1 || _count==0",
+              "condition_ir": {
+                "t": "bin",
+                "op": "||",
+                "l": {
+                  "t": "cmp",
+                  "op": "==",
+                  "l": {
+                    "t": "var",
+                    "name": "_kindness"
+                  },
+                  "r": {
+                    "t": "num",
+                    "v": 1
+                  }
+                },
+                "r": {
+                  "t": "cmp",
+                  "op": "==",
+                  "l": {
+                    "t": "var",
+                    "name": "_count"
+                  },
+                  "r": {
+                    "t": "num",
+                    "v": 0
+                  }
+                }
+              },
+              "effect_src": "_strength = 1; kindness = 1",
+              "effect_ir": [
+                {
+                  "op": "=",
+                  "var": "_strength",
+                  "expr": {
+                    "t": "num",
+                    "v": 1
+                  }
+                },
+                {
+                  "op": "=",
+                  "var": "kindness",
+                  "expr": {
+                    "t": "num",
+                    "v": 1
+                  }
+                }
+              ],
+              "route_src": "",
+              "route_ir": []
+            },
+            {
+              "stage": 1,
+              "_step": 4,
+              "_branch": null,
+              "option": 2,
+              "type": null,
+              "title": "Pesona",
+              "description": "Mudah memikat orang dan sukses dalam interaksi sosial.",
+              "condition_src": "_charm==1 || _count==0",
+              "condition_ir": {
+                "t": "bin",
+                "op": "||",
+                "l": {
+                  "t": "cmp",
+                  "op": "==",
+                  "l": {
+                    "t": "var",
+                    "name": "_charm"
+                  },
+                  "r": {
+                    "t": "num",
+                    "v": 1
+                  }
+                },
+                "r": {
+                  "t": "cmp",
+                  "op": "==",
+                  "l": {
+                    "t": "var",
+                    "name": "_count"
+                  },
+                  "r": {
+                    "t": "num",
+                    "v": 0
+                  }
+                }
+              },
+              "effect_src": "_strength = 2; charm = 1",
+              "effect_ir": [
+                {
+                  "op": "=",
+                  "var": "_strength",
+                  "expr": {
+                    "t": "num",
+                    "v": 2
+                  }
+                },
+                {
+                  "op": "=",
+                  "var": "charm",
+                  "expr": {
+                    "t": "num",
+                    "v": 1
+                  }
+                }
+              ],
+              "route_src": "",
+              "route_ir": []
+            },
+            {
+              "stage": 1,
+              "_step": 4,
+              "_branch": null,
+              "option": 3,
+              "type": null,
+              "title": "Keberanian",
+              "description": "Membuka pilihan aksi berani dan menghadapi ketidakadilan.",
+              "condition_src": "_boldness==1 || _count==0",
+              "condition_ir": {
+                "t": "bin",
+                "op": "||",
+                "l": {
+                  "t": "cmp",
+                  "op": "==",
+                  "l": {
+                    "t": "var",
+                    "name": "_boldness"
+                  },
+                  "r": {
+                    "t": "num",
+                    "v": 1
+                  }
+                },
+                "r": {
+                  "t": "cmp",
+                  "op": "==",
+                  "l": {
+                    "t": "var",
+                    "name": "_count"
+                  },
+                  "r": {
+                    "t": "num",
+                    "v": 0
+                  }
+                }
+              },
+              "effect_src": "_strength = 3; boldness = 1",
+              "effect_ir": [
+                {
+                  "op": "=",
+                  "var": "_strength",
+                  "expr": {
+                    "t": "num",
+                    "v": 3
+                  }
+                },
+                {
+                  "op": "=",
+                  "var": "boldness",
+                  "expr": {
+                    "t": "num",
+                    "v": 1
+                  }
+                }
+              ],
+              "route_src": "",
+              "route_ir": []
+            },
+            {
+              "stage": 1,
+              "_step": 4,
+              "_branch": null,
+              "option": 4,
+              "type": null,
+              "title": "Keterampilan",
+              "description": "Luwes bergerak, cepat bekerja, dan jarang melakukan kesalahan.",
+              "condition_src": "_dexterity==1 || _count==0",
+              "condition_ir": {
+                "t": "bin",
+                "op": "||",
+                "l": {
+                  "t": "cmp",
+                  "op": "==",
+                  "l": {
+                    "t": "var",
+                    "name": "_dexterity"
+                  },
+                  "r": {
+                    "t": "num",
+                    "v": 1
+                  }
+                },
+                "r": {
+                  "t": "cmp",
+                  "op": "==",
+                  "l": {
+                    "t": "var",
+                    "name": "_count"
+                  },
+                  "r": {
+                    "t": "num",
+                    "v": 0
+                  }
+                }
+              },
+              "effect_src": "_strength = 4; dexterity = 1",
+              "effect_ir": [
+                {
+                  "op": "=",
+                  "var": "_strength",
+                  "expr": {
+                    "t": "num",
+                    "v": 4
+                  }
+                },
+                {
+                  "op": "=",
+                  "var": "dexterity",
+                  "expr": {
+                    "t": "num",
+                    "v": 1
+                  }
+                }
+              ],
+              "route_src": "",
+              "route_ir": []
+            },
+            {
+              "stage": 1,
+              "_step": 4,
+              "_branch": null,
+              "option": 5,
+              "type": null,
+              "title": "Kepekaan",
+              "description": "Cepat membaca situasi, menemukan peluang, dan menghindari bahaya.",
+              "condition_src": "_perception==1 || _count==0",
+              "condition_ir": {
+                "t": "bin",
+                "op": "||",
+                "l": {
+                  "t": "cmp",
+                  "op": "==",
+                  "l": {
+                    "t": "var",
+                    "name": "_perception"
+                  },
+                  "r": {
+                    "t": "num",
+                    "v": 1
+                  }
+                },
+                "r": {
+                  "t": "cmp",
+                  "op": "==",
+                  "l": {
+                    "t": "var",
+                    "name": "_count"
+                  },
+                  "r": {
+                    "t": "num",
+                    "v": 0
+                  }
+                }
+              },
+              "effect_src": "_strength = 5; perception = 1",
+              "effect_ir": [
+                {
+                  "op": "=",
+                  "var": "_strength",
+                  "expr": {
+                    "t": "num",
+                    "v": 5
+                  }
+                },
+                {
+                  "op": "=",
+                  "var": "perception",
+                  "expr": {
+                    "t": "num",
+                    "v": 1
+                  }
+                }
+              ],
+              "route_src": "",
+              "route_ir": []
+            },
+            {
+              "stage": 1,
+              "_step": 4,
+              "_branch": null,
+              "option": 6,
+              "type": null,
+              "title": "Ketahanan Mental",
+              "description": "Lebih tenang dalam menghadapi tekanan emosional dan sosial",
+              "condition_src": "_resilience==1 || _count==0",
+              "condition_ir": {
+                "t": "bin",
+                "op": "||",
+                "l": {
+                  "t": "cmp",
+                  "op": "==",
+                  "l": {
+                    "t": "var",
+                    "name": "_resilience"
+                  },
+                  "r": {
+                    "t": "num",
+                    "v": 1
+                  }
+                },
+                "r": {
+                  "t": "cmp",
+                  "op": "==",
+                  "l": {
+                    "t": "var",
+                    "name": "_count"
+                  },
+                  "r": {
+                    "t": "num",
+                    "v": 0
+                  }
+                }
+              },
+              "effect_src": "_strength = 6; resilience = 1",
+              "effect_ir": [
+                {
+                  "op": "=",
+                  "var": "_strength",
+                  "expr": {
+                    "t": "num",
+                    "v": 6
+                  }
+                },
+                {
+                  "op": "=",
+                  "var": "resilience",
+                  "expr": {
+                    "t": "num",
+                    "v": 1
+                  }
+                }
+              ],
+              "route_src": "",
+              "route_ir": []
+            },
+            {
+              "stage": 1,
+              "_step": 4,
+              "_branch": null,
+              "option": 7,
+              "type": null,
+              "title": "Ketahanan Fisik",
+              "description": "Stamina besar, tahan sakit, lebih kuat, dan aman dari kondisi kritis.",
+              "condition_src": "_vitality==1 || _count==0",
+              "condition_ir": {
+                "t": "bin",
+                "op": "||",
+                "l": {
+                  "t": "cmp",
+                  "op": "==",
+                  "l": {
+                    "t": "var",
+                    "name": "_vitality"
+                  },
+                  "r": {
+                    "t": "num",
+                    "v": 1
+                  }
+                },
+                "r": {
+                  "t": "cmp",
+                  "op": "==",
+                  "l": {
+                    "t": "var",
+                    "name": "_count"
+                  },
+                  "r": {
+                    "t": "num",
+                    "v": 0
+                  }
+                }
+              },
+              "effect_src": "_strength = 7; vitality = 1",
+              "effect_ir": [
+                {
+                  "op": "=",
+                  "var": "_strength",
+                  "expr": {
+                    "t": "num",
+                    "v": 7
+                  }
+                },
+                {
+                  "op": "=",
+                  "var": "vitality",
+                  "expr": {
+                    "t": "num",
+                    "v": 1
+                  }
+                }
+              ],
+              "route_src": "",
+              "route_ir": []
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "_step": 5,
+          "_branch": null,
+          "type": "single",
+          "title": "Kekurangan Utama",
+          "description": "Dan apa kekurangan utama yang paling menyulitkanmu?",
+          "condition_src": "",
+          "condition_ir": {
+            "t": "var",
+            "name": "nan"
+          },
+          "effect_src": "",
+          "effect_ir": [],
+          "route_src": "_step+=1",
+          "route_ir": [
+            {
+              "op": "+=",
+              "var": "_step",
+              "expr": {
+                "t": "num",
+                "v": 1
+              }
+            }
+          ],
+          "options": [
+            {
+              "stage": 1,
+              "_step": 5,
+              "_branch": null,
+              "option": 1,
+              "type": null,
+              "title": "Kebaikan Hati",
+              "description": "Sulit berbuat baik dan mendapat dukungan, sering masuk situasi gelap.",
+              "condition_src": "_kindness==0 && _strength != 1",
+              "condition_ir": {
+                "t": "bin",
+                "op": "&&",
+                "l": {
+                  "t": "cmp",
+                  "op": "==",
+                  "l": {
+                    "t": "var",
+                    "name": "_kindness"
+                  },
+                  "r": {
+                    "t": "num",
+                    "v": 0
+                  }
+                },
+                "r": {
+                  "t": "cmp",
+                  "op": "!=",
+                  "l": {
+                    "t": "var",
+                    "name": "_strength"
+                  },
+                  "r": {
+                    "t": "num",
+                    "v": 1
+                  }
+                }
+              },
+              "effect_src": "_weakness = 1; kindness = -1",
+              "effect_ir": [
+                {
+                  "op": "=",
+                  "var": "_weakness",
+                  "expr": {
+                    "t": "num",
+                    "v": 1
+                  }
+                },
+                {
+                  "op": "=",
+                  "var": "kindness",
+                  "expr": {
+                    "t": "un",
+                    "op": "-",
+                    "x": {
+                      "t": "num",
+                      "v": 1
+                    }
+                  }
+                }
+              ],
+              "route_src": "",
+              "route_ir": []
+            },
+            {
+              "stage": 1,
+              "_step": 5,
+              "_branch": null,
+              "option": 2,
+              "type": null,
+              "title": "Pesona",
+              "description": "Sulit menarik perhatian dan jarang berhasil dalam interaksi sosial.",
+              "condition_src": "_charm==0 && _strength != 2",
+              "condition_ir": {
+                "t": "bin",
+                "op": "&&",
+                "l": {
+                  "t": "cmp",
+                  "op": "==",
+                  "l": {
+                    "t": "var",
+                    "name": "_charm"
+                  },
+                  "r": {
+                    "t": "num",
+                    "v": 0
+                  }
+                },
+                "r": {
+                  "t": "cmp",
+                  "op": "!=",
+                  "l": {
+                    "t": "var",
+                    "name": "_strength"
+                  },
+                  "r": {
+                    "t": "num",
+                    "v": 2
+                  }
+                }
+              },
+              "effect_src": "_weakness = 2; charm = -1",
+              "effect_ir": [
+                {
+                  "op": "=",
+                  "var": "_weakness",
+                  "expr": {
+                    "t": "num",
+                    "v": 2
+                  }
+                },
+                {
+                  "op": "=",
+                  "var": "charm",
+                  "expr": {
+                    "t": "un",
+                    "op": "-",
+                    "x": {
+                      "t": "num",
+                      "v": 1
+                    }
+                  }
+                }
+              ],
+              "route_src": "",
+              "route_ir": []
+            },
+            {
+              "stage": 1,
+              "_step": 5,
+              "_branch": null,
+              "option": 3,
+              "type": null,
+              "title": "Keberanian",
+              "description": "Cenderung pasif dan kehilangan banyak peluang penting.",
+              "condition_src": "_boldness==0 && _strength != 3",
+              "condition_ir": {
+                "t": "bin",
+                "op": "&&",
+                "l": {
+                  "t": "cmp",
+                  "op": "==",
+                  "l": {
+                    "t": "var",
+                    "name": "_boldness"
+                  },
+                  "r": {
+                    "t": "num",
+                    "v": 0
+                  }
+                },
+                "r": {
+                  "t": "cmp",
+                  "op": "!=",
+                  "l": {
+                    "t": "var",
+                    "name": "_strength"
+                  },
+                  "r": {
+                    "t": "num",
+                    "v": 3
+                  }
+                }
+              },
+              "effect_src": "_weakness = 3; boldness = -1",
+              "effect_ir": [
+                {
+                  "op": "=",
+                  "var": "_weakness",
+                  "expr": {
+                    "t": "num",
+                    "v": 3
+                  }
+                },
+                {
+                  "op": "=",
+                  "var": "boldness",
+                  "expr": {
+                    "t": "un",
+                    "op": "-",
+                    "x": {
+                      "t": "num",
+                      "v": 1
+                    }
+                  }
+                }
+              ],
+              "route_src": "",
+              "route_ir": []
+            },
+            {
+              "stage": 1,
+              "_step": 5,
+              "_branch": null,
+              "option": 4,
+              "type": null,
+              "title": "Keterampilan",
+              "description": "Sering gagal tugas, bekerja lebih lambat, dan mudah cedera.",
+              "condition_src": "_dexterity==0 && _strength != 4",
+              "condition_ir": {
+                "t": "bin",
+                "op": "&&",
+                "l": {
+                  "t": "cmp",
+                  "op": "==",
+                  "l": {
+                    "t": "var",
+                    "name": "_dexterity"
+                  },
+                  "r": {
+                    "t": "num",
+                    "v": 0
+                  }
+                },
+                "r": {
+                  "t": "cmp",
+                  "op": "!=",
+                  "l": {
+                    "t": "var",
+                    "name": "_strength"
+                  },
+                  "r": {
+                    "t": "num",
+                    "v": 4
+                  }
+                }
+              },
+              "effect_src": "_weakness = 4; dexterity = -1",
+              "effect_ir": [
+                {
+                  "op": "=",
+                  "var": "_weakness",
+                  "expr": {
+                    "t": "num",
+                    "v": 4
+                  }
+                },
+                {
+                  "op": "=",
+                  "var": "dexterity",
+                  "expr": {
+                    "t": "un",
+                    "op": "-",
+                    "x": {
+                      "t": "num",
+                      "v": 1
+                    }
+                  }
+                }
+              ],
+              "route_src": "",
+              "route_ir": []
+            },
+            {
+              "stage": 1,
+              "_step": 5,
+              "_branch": null,
+              "option": 5,
+              "type": null,
+              "title": "Kepekaan",
+              "description": "Mudah tertipu, sulit melihat peluang, dan rentan masuk bahaya tanpa sadar.",
+              "condition_src": "_perception==0 && _strength != 5",
+              "condition_ir": {
+                "t": "bin",
+                "op": "&&",
+                "l": {
+                  "t": "cmp",
+                  "op": "==",
+                  "l": {
+                    "t": "var",
+                    "name": "_perception"
+                  },
+                  "r": {
+                    "t": "num",
+                    "v": 0
+                  }
+                },
+                "r": {
+                  "t": "cmp",
+                  "op": "!=",
+                  "l": {
+                    "t": "var",
+                    "name": "_strength"
+                  },
+                  "r": {
+                    "t": "num",
+                    "v": 5
+                  }
+                }
+              },
+              "effect_src": "_weakness = 5; perception = -1",
+              "effect_ir": [
+                {
+                  "op": "=",
+                  "var": "_weakness",
+                  "expr": {
+                    "t": "num",
+                    "v": 5
+                  }
+                },
+                {
+                  "op": "=",
+                  "var": "perception",
+                  "expr": {
+                    "t": "un",
+                    "op": "-",
+                    "x": {
+                      "t": "num",
+                      "v": 1
+                    }
+                  }
+                }
+              ],
+              "route_src": "",
+              "route_ir": []
+            },
+            {
+              "stage": 1,
+              "_step": 5,
+              "_branch": null,
+              "option": 6,
+              "type": null,
+              "title": "Ketahanan Mental",
+              "description": "Mudah stres, cepat runtuh, dan sulit bangkit kembali.",
+              "condition_src": "_resilience==0 && _strength != 6",
+              "condition_ir": {
+                "t": "bin",
+                "op": "&&",
+                "l": {
+                  "t": "cmp",
+                  "op": "==",
+                  "l": {
+                    "t": "var",
+                    "name": "_resilience"
+                  },
+                  "r": {
+                    "t": "num",
+                    "v": 0
+                  }
+                },
+                "r": {
+                  "t": "cmp",
+                  "op": "!=",
+                  "l": {
+                    "t": "var",
+                    "name": "_strength"
+                  },
+                  "r": {
+                    "t": "num",
+                    "v": 6
+                  }
+                }
+              },
+              "effect_src": "_weakness = 6; resilience = -1",
+              "effect_ir": [
+                {
+                  "op": "=",
+                  "var": "_weakness",
+                  "expr": {
+                    "t": "num",
+                    "v": 6
+                  }
+                },
+                {
+                  "op": "=",
+                  "var": "resilience",
+                  "expr": {
+                    "t": "un",
+                    "op": "-",
+                    "x": {
+                      "t": "num",
+                      "v": 1
+                    }
+                  }
+                }
+              ],
+              "route_src": "",
+              "route_ir": []
+            },
+            {
+              "stage": 1,
+              "_step": 5,
+              "_branch": null,
+              "option": 7,
+              "type": null,
+              "title": "Ketahanan Fisik",
+              "description": "Cepat lelah, rentan sakit, dan bisa jatuh dalam kondisi kritis.",
+              "condition_src": "_vitality==0 && _strength != 7",
+              "condition_ir": {
+                "t": "bin",
+                "op": "&&",
+                "l": {
+                  "t": "cmp",
+                  "op": "==",
+                  "l": {
+                    "t": "var",
+                    "name": "_vitality"
+                  },
+                  "r": {
+                    "t": "num",
+                    "v": 0
+                  }
+                },
+                "r": {
+                  "t": "cmp",
+                  "op": "!=",
+                  "l": {
+                    "t": "var",
+                    "name": "_strength"
+                  },
+                  "r": {
+                    "t": "num",
+                    "v": 7
+                  }
+                }
+              },
+              "effect_src": "_weakness = 7; vitality = -1",
+              "effect_ir": [
+                {
+                  "op": "=",
+                  "var": "_weakness",
+                  "expr": {
+                    "t": "num",
+                    "v": 7
+                  }
+                },
+                {
+                  "op": "=",
+                  "var": "vitality",
+                  "expr": {
+                    "t": "un",
+                    "op": "-",
+                    "x": {
+                      "t": "num",
+                      "v": 1
+                    }
+                  }
+                }
+              ],
+              "route_src": "",
+              "route_ir": []
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "_step": 6,
+          "_branch": null,
+          "type": "auto",
+          "title": "Cerita Dimulai",
+          "description": "Selamat menjalani hari, Cinderella...",
+          "condition_src": "",
+          "condition_ir": {
+            "t": "var",
+            "name": "nan"
+          },
+          "effect_src": "",
+          "effect_ir": [],
+          "route_src": "_step=0",
+          "route_ir": [
+            {
+              "op": "=",
+              "var": "_step",
+              "expr": {
+                "t": "num",
+                "v": 0
+              }
+            }
+          ],
+          "options": [
+            {
+              "stage": 1,
+              "_step": 6,
+              "_branch": null,
+              "option": 1,
+              "type": null,
+              "title": "yang berhati kotor",
+              "description": null,
+              "condition_src": "_weakness==1",
+              "condition_ir": {
+                "t": "cmp",
+                "op": "==",
+                "l": {
+                  "t": "var",
+                  "name": "_weakness"
+                },
+                "r": {
+                  "t": "num",
+                  "v": 1
+                }
+              },
+              "effect_src": "",
+              "effect_ir": [],
+              "route_src": "",
+              "route_ir": []
+            },
+            {
+              "stage": 1,
+              "_step": 6,
+              "_branch": null,
+              "option": 2,
+              "type": null,
+              "title": "yang buruk rupa",
+              "description": null,
+              "condition_src": "_weakness==2",
+              "condition_ir": {
+                "t": "cmp",
+                "op": "==",
+                "l": {
+                  "t": "var",
+                  "name": "_weakness"
+                },
+                "r": {
+                  "t": "num",
+                  "v": 2
+                }
+              },
+              "effect_src": "",
+              "effect_ir": [],
+              "route_src": "",
+              "route_ir": []
+            },
+            {
+              "stage": 1,
+              "_step": 6,
+              "_branch": null,
+              "option": 3,
+              "type": null,
+              "title": "yang pengecut",
+              "description": null,
+              "condition_src": "_weakness==3",
+              "condition_ir": {
+                "t": "cmp",
+                "op": "==",
+                "l": {
+                  "t": "var",
+                  "name": "_weakness"
+                },
+                "r": {
+                  "t": "num",
+                  "v": 3
+                }
+              },
+              "effect_src": "",
+              "effect_ir": [],
+              "route_src": "",
+              "route_ir": []
+            },
+            {
+              "stage": 1,
+              "_step": 6,
+              "_branch": null,
+              "option": 4,
+              "type": null,
+              "title": "yang lamban dan ceroboh",
+              "description": null,
+              "condition_src": "_weakness==4",
+              "condition_ir": {
+                "t": "cmp",
+                "op": "==",
+                "l": {
+                  "t": "var",
+                  "name": "_weakness"
+                },
+                "r": {
+                  "t": "num",
+                  "v": 4
+                }
+              },
+              "effect_src": "",
+              "effect_ir": [],
+              "route_src": "",
+              "route_ir": []
+            },
+            {
+              "stage": 1,
+              "_step": 6,
+              "_branch": null,
+              "option": 5,
+              "type": null,
+              "title": "yang mudah luput",
+              "description": null,
+              "condition_src": "_weakness==5",
+              "condition_ir": {
+                "t": "cmp",
+                "op": "==",
+                "l": {
+                  "t": "var",
+                  "name": "_weakness"
+                },
+                "r": {
+                  "t": "num",
+                  "v": 5
+                }
+              },
+              "effect_src": "",
+              "effect_ir": [],
+              "route_src": "",
+              "route_ir": []
+            },
+            {
+              "stage": 1,
+              "_step": 6,
+              "_branch": null,
+              "option": 6,
+              "type": null,
+              "title": "yang cengeng",
+              "description": null,
+              "condition_src": "_weakness==6",
+              "condition_ir": {
+                "t": "cmp",
+                "op": "==",
+                "l": {
+                  "t": "var",
+                  "name": "_weakness"
+                },
+                "r": {
+                  "t": "num",
+                  "v": 6
+                }
+              },
+              "effect_src": "",
+              "effect_ir": [],
+              "route_src": "",
+              "route_ir": []
+            },
+            {
+              "stage": 1,
+              "_step": 6,
+              "_branch": null,
+              "option": 7,
+              "type": null,
+              "title": "yang lemah",
+              "description": null,
+              "condition_src": "_weakness==7",
+              "condition_ir": {
+                "t": "cmp",
+                "op": "==",
+                "l": {
+                  "t": "var",
+                  "name": "_weakness"
+                },
+                "r": {
+                  "t": "num",
+                  "v": 7
+                }
+              },
+              "effect_src": "",
+              "effect_ir": [],
+              "route_src": "",
+              "route_ir": []
+            },
+            {
+              "stage": 1,
+              "_step": 6,
+              "_branch": null,
+              "option": 8,
+              "type": null,
+              "title": "namun tulus dan baik hati",
+              "description": null,
+              "condition_src": "_strength==1",
+              "condition_ir": {
+                "t": "cmp",
+                "op": "==",
+                "l": {
+                  "t": "var",
+                  "name": "_strength"
+                },
+                "r": {
+                  "t": "num",
+                  "v": 1
+                }
+              },
+              "effect_src": "",
+              "effect_ir": [],
+              "route_src": "",
+              "route_ir": []
+            },
+            {
+              "stage": 1,
+              "_step": 6,
+              "_branch": null,
+              "option": 9,
+              "type": null,
+              "title": "namun cantik mempesona",
+              "description": null,
+              "condition_src": "_strength==2",
+              "condition_ir": {
+                "t": "cmp",
+                "op": "==",
+                "l": {
+                  "t": "var",
+                  "name": "_strength"
+                },
+                "r": {
+                  "t": "num",
+                  "v": 2
+                }
+              },
+              "effect_src": "",
+              "effect_ir": [],
+              "route_src": "",
+              "route_ir": []
+            },
+            {
+              "stage": 1,
+              "_step": 6,
+              "_branch": null,
+              "option": 10,
+              "type": null,
+              "title": "namun berani percaya diri",
+              "description": null,
+              "condition_src": "_strength==3",
+              "condition_ir": {
+                "t": "cmp",
+                "op": "==",
+                "l": {
+                  "t": "var",
+                  "name": "_strength"
+                },
+                "r": {
+                  "t": "num",
+                  "v": 3
+                }
+              },
+              "effect_src": "",
+              "effect_ir": [],
+              "route_src": "",
+              "route_ir": []
+            },
+            {
+              "stage": 1,
+              "_step": 6,
+              "_branch": null,
+              "option": 11,
+              "type": null,
+              "title": "namun terampil dan cekatan",
+              "description": null,
+              "condition_src": "_strength==4",
+              "condition_ir": {
+                "t": "cmp",
+                "op": "==",
+                "l": {
+                  "t": "var",
+                  "name": "_strength"
+                },
+                "r": {
+                  "t": "num",
+                  "v": 4
+                }
+              },
+              "effect_src": "",
+              "effect_ir": [],
+              "route_src": "",
+              "route_ir": []
+            },
+            {
+              "stage": 1,
+              "_step": 6,
+              "_branch": null,
+              "option": 12,
+              "type": null,
+              "title": "namun peka dan jeli",
+              "description": null,
+              "condition_src": "_strength==5",
+              "condition_ir": {
+                "t": "cmp",
+                "op": "==",
+                "l": {
+                  "t": "var",
+                  "name": "_strength"
+                },
+                "r": {
+                  "t": "num",
+                  "v": 5
+                }
+              },
+              "effect_src": "",
+              "effect_ir": [],
+              "route_src": "",
+              "route_ir": []
+            },
+            {
+              "stage": 1,
+              "_step": 6,
+              "_branch": null,
+              "option": 13,
+              "type": null,
+              "title": "namun sabar dan tabah",
+              "description": null,
+              "condition_src": "_strength==6",
+              "condition_ir": {
+                "t": "cmp",
+                "op": "==",
+                "l": {
+                  "t": "var",
+                  "name": "_strength"
+                },
+                "r": {
+                  "t": "num",
+                  "v": 6
+                }
+              },
+              "effect_src": "",
+              "effect_ir": [],
+              "route_src": "",
+              "route_ir": []
+            },
+            {
+              "stage": 1,
+              "_step": 6,
+              "_branch": null,
+              "option": 14,
+              "type": null,
+              "title": "namun kuat tahan banting",
+              "description": null,
+              "condition_src": "_strength==7",
+              "condition_ir": {
+                "t": "cmp",
+                "op": "==",
+                "l": {
+                  "t": "var",
+                  "name": "_strength"
+                },
+                "r": {
+                  "t": "num",
+                  "v": 7
+                }
+              },
+              "effect_src": "",
+              "effect_ir": [],
+              "route_src": "",
+              "route_ir": []
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "_step": 0,
+          "_branch": null,
+          "type": "hidden",
+          "title": "Karakter",
+          "description": null,
+          "condition_src": "",
+          "condition_ir": {
+            "t": "var",
+            "name": "nan"
+          },
+          "effect_src": "",
+          "effect_ir": [],
+          "route_src": "stage=2",
+          "route_ir": [
+            {
+              "op": "=",
+              "var": "stage",
+              "expr": {
+                "t": "num",
+                "v": 2
+              }
+            }
+          ],
+          "options": [
+            {
+              "stage": 1,
+              "_step": 0,
+              "_branch": null,
+              "option": 1,
+              "type": null,
+              "title": "Kebaikan Hati",
+              "description": null,
+              "condition_src": "",
+              "condition_ir": {
+                "t": "var",
+                "name": "nan"
+              },
+              "effect_src": "kindness += (2 + _kindness*_bonus)",
+              "effect_ir": [
+                {
+                  "op": "+=",
+                  "var": "kindness",
+                  "expr": {
+                    "t": "bin",
+                    "op": "+",
+                    "l": {
+                      "t": "num",
+                      "v": 2
+                    },
+                    "r": {
+                      "t": "bin",
+                      "op": "*",
+                      "l": {
+                        "t": "var",
+                        "name": "_kindness"
+                      },
+                      "r": {
+                        "t": "var",
+                        "name": "_bonus"
+                      }
+                    }
+                  }
+                }
+              ],
+              "route_src": "",
+              "route_ir": []
+            },
+            {
+              "stage": 1,
+              "_step": 0,
+              "_branch": null,
+              "option": 2,
+              "type": null,
+              "title": "Pesona",
+              "description": null,
+              "condition_src": "",
+              "condition_ir": {
+                "t": "var",
+                "name": "nan"
+              },
+              "effect_src": "charm += (2 + _charm*_bonus)",
+              "effect_ir": [
+                {
+                  "op": "+=",
+                  "var": "charm",
+                  "expr": {
+                    "t": "bin",
+                    "op": "+",
+                    "l": {
+                      "t": "num",
+                      "v": 2
+                    },
+                    "r": {
+                      "t": "bin",
+                      "op": "*",
+                      "l": {
+                        "t": "var",
+                        "name": "_charm"
+                      },
+                      "r": {
+                        "t": "var",
+                        "name": "_bonus"
+                      }
+                    }
+                  }
+                }
+              ],
+              "route_src": "",
+              "route_ir": []
+            },
+            {
+              "stage": 1,
+              "_step": 0,
+              "_branch": null,
+              "option": 3,
+              "type": null,
+              "title": "Keberanian",
+              "description": null,
+              "condition_src": "",
+              "condition_ir": {
+                "t": "var",
+                "name": "nan"
+              },
+              "effect_src": "boldness += (2 + _boldness*_bonus)",
+              "effect_ir": [
+                {
+                  "op": "+=",
+                  "var": "boldness",
+                  "expr": {
+                    "t": "bin",
+                    "op": "+",
+                    "l": {
+                      "t": "num",
+                      "v": 2
+                    },
+                    "r": {
+                      "t": "bin",
+                      "op": "*",
+                      "l": {
+                        "t": "var",
+                        "name": "_boldness"
+                      },
+                      "r": {
+                        "t": "var",
+                        "name": "_bonus"
+                      }
+                    }
+                  }
+                }
+              ],
+              "route_src": "",
+              "route_ir": []
+            },
+            {
+              "stage": 1,
+              "_step": 0,
+              "_branch": null,
+              "option": 4,
+              "type": null,
+              "title": "Keterampilan",
+              "description": null,
+              "condition_src": "",
+              "condition_ir": {
+                "t": "var",
+                "name": "nan"
+              },
+              "effect_src": "dexterity += (2 + _dexterity*_bonus)",
+              "effect_ir": [
+                {
+                  "op": "+=",
+                  "var": "dexterity",
+                  "expr": {
+                    "t": "bin",
+                    "op": "+",
+                    "l": {
+                      "t": "num",
+                      "v": 2
+                    },
+                    "r": {
+                      "t": "bin",
+                      "op": "*",
+                      "l": {
+                        "t": "var",
+                        "name": "_dexterity"
+                      },
+                      "r": {
+                        "t": "var",
+                        "name": "_bonus"
+                      }
+                    }
+                  }
+                }
+              ],
+              "route_src": "",
+              "route_ir": []
+            },
+            {
+              "stage": 1,
+              "_step": 0,
+              "_branch": null,
+              "option": 5,
+              "type": null,
+              "title": "Kepekaan",
+              "description": null,
+              "condition_src": "",
+              "condition_ir": {
+                "t": "var",
+                "name": "nan"
+              },
+              "effect_src": "perception += (2 + _perception*_bonus)",
+              "effect_ir": [
+                {
+                  "op": "+=",
+                  "var": "perception",
+                  "expr": {
+                    "t": "bin",
+                    "op": "+",
+                    "l": {
+                      "t": "num",
+                      "v": 2
+                    },
+                    "r": {
+                      "t": "bin",
+                      "op": "*",
+                      "l": {
+                        "t": "var",
+                        "name": "_perception"
+                      },
+                      "r": {
+                        "t": "var",
+                        "name": "_bonus"
+                      }
+                    }
+                  }
+                }
+              ],
+              "route_src": "",
+              "route_ir": []
+            },
+            {
+              "stage": 1,
+              "_step": 0,
+              "_branch": null,
+              "option": 6,
+              "type": null,
+              "title": "Ketahanan Mental",
+              "description": null,
+              "condition_src": "",
+              "condition_ir": {
+                "t": "var",
+                "name": "nan"
+              },
+              "effect_src": "resilience += (2 + _resilience*_bonus)",
+              "effect_ir": [
+                {
+                  "op": "+=",
+                  "var": "resilience",
+                  "expr": {
+                    "t": "bin",
+                    "op": "+",
+                    "l": {
+                      "t": "num",
+                      "v": 2
+                    },
+                    "r": {
+                      "t": "bin",
+                      "op": "*",
+                      "l": {
+                        "t": "var",
+                        "name": "_resilience"
+                      },
+                      "r": {
+                        "t": "var",
+                        "name": "_bonus"
+                      }
+                    }
+                  }
+                }
+              ],
+              "route_src": "",
+              "route_ir": []
+            },
+            {
+              "stage": 1,
+              "_step": 0,
+              "_branch": null,
+              "option": 7,
+              "type": null,
+              "title": "Ketahanan Fisik",
+              "description": null,
+              "condition_src": "",
+              "condition_ir": {
+                "t": "var",
+                "name": "nan"
+              },
+              "effect_src": "vitality += (2 + _vitality*_bonus)",
+              "effect_ir": [
+                {
+                  "op": "+=",
+                  "var": "vitality",
+                  "expr": {
+                    "t": "bin",
+                    "op": "+",
+                    "l": {
+                      "t": "num",
+                      "v": 2
+                    },
+                    "r": {
+                      "t": "bin",
+                      "op": "*",
+                      "l": {
+                        "t": "var",
+                        "name": "_vitality"
+                      },
+                      "r": {
+                        "t": "var",
+                        "name": "_bonus"
+                      }
+                    }
+                  }
+                }
+              ],
+              "route_src": "",
+              "route_ir": []
+            }
+          ]
+        }
+      ],
+      "title": "Karkater",
+      "description": null
+    }
+  }
+}

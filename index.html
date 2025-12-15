@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#f6f1e8" />
+  <title>Perpusmeong</title>
+  <link rel="stylesheet" href="app.css" />
+</head>
+<body>
+  <div id="app" class="app">
+    <!-- LANDING -->
+    <section id="screen-landing" class="screen screen--active" aria-label="Landing">
+      <div class="page">
+        <article class="letter">
+          <header class="letter__header">
+            <h1 class="letter__code">503 – Service Unavailable</h1>
+          </header>
+          <div class="letter__body">
+            <p><strong>Halo Pengunjung,</strong></p>
+            <p>Perpustakaan ini sebenarnya belum jadi. Infrastruktur masih dibangun, bukunya masih sedikit dan belum selesai ditulis. Pokoknya belum siap deh. Datang lagi lain kali ya.</p>
+          </div>
+          <footer class="letter__footer">
+            <button id="btn-login" class="btn btn--primary" type="button">
+              Masuk dengan Google
+            </button>
+            <p class="hint" id="login-hint"></p>
+          </footer>
+        </article>
+      </div>
+    </section>
+
+    <!-- LIBRARY -->
+    <section id="screen-library" class="screen" aria-label="Library">
+      <header class="topbar">
+        <div class="topbar__inner">
+          <div>
+            <div class="topbar__title">Perpusmeong</div>
+            <div class="topbar__subtitle" id="user-line"></div>
+          </div>
+          <button id="btn-logout" class="btn btn--ghost" type="button">Keluar</button>
+        </div>
+      </header>
+      <div class="page">
+        <div id="story-list" class="story-list" aria-label="Daftar Buku"></div>
+      </div>
+
+      <!-- Bottom sheet / popup -->
+      <div id="sheet-backdrop" class="backdrop hidden" role="presentation"></div>
+      <aside id="story-sheet" class="sheet hidden" role="dialog" aria-modal="true" aria-label="Detail Buku">
+        <div class="sheet__grab" aria-hidden="true"></div>
+        <div class="sheet__content">
+          <h2 id="sheet-title" class="sheet__title"></h2>
+          <p id="sheet-desc" class="sheet__desc"></p>
+          <div class="sheet__actions">
+            <button id="btn-start" class="btn btn--primary" type="button">Mulai</button>
+            <button id="btn-continue" class="btn btn--secondary" type="button">Lanjutkan</button>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- READER -->
+    <section id="screen-reader" class="screen" aria-label="Reader">
+      <header class="readerbar">
+        <div class="readerbar__inner">
+          <button id="btn-back" class="btn btn--ghost" type="button" aria-label="Kembali">←</button>
+          <div class="readerbar__meta">
+            <div class="readerbar__title" id="reader-story-title">Perpusmeong</div>
+            <div class="tabs" role="tablist" aria-label="Tabs">
+              <button id="tab-story" class="tab tab--active" role="tab" aria-selected="true">Story</button>
+              <button id="tab-status" class="tab" role="tab" aria-selected="false">Status</button>
+            </div>
+          </div>
+          <div class="readerbar__spacer"></div>
+        </div>
+      </header>
+
+      <main class="page page--reader">
+        <!-- STORY VIEW -->
+        <section id="view-story" class="view view--active" aria-label="Story">
+          <h1 id="event-title" class="event__title"></h1>
+          <div id="event-description" class="event__desc"></div>
+
+          <section id="options-section" class="options">
+            <div class="options__label" id="options-label"></div>
+            <div id="options" class="options__list" aria-label="Pilihan"></div>
+          </section>
+
+          <section id="selected-preview" class="preview hidden" aria-label="Preview Pilihan">
+            <div class="preview__title">Terpilih</div>
+            <div id="preview-list" class="preview__list"></div>
+          </section>
+
+          <section id="comments" class="comments hidden" aria-label="Komentar">
+            <div class="comments__header">
+              <div class="comments__title">Komentar</div>
+              <button id="btn-close-comments" class="btn btn--ghost" type="button">Tutup</button>
+            </div>
+            <textarea id="comment-box" class="comments__box" placeholder="Tulis catatan/komen..." rows="4"></textarea>
+            <div class="comments__actions">
+              <button id="btn-save-comment" class="btn btn--secondary" type="button">Simpan</button>
+            </div>
+          </section>
+
+          <div class="spacer"></div>
+        </section>
+
+        <!-- STATUS VIEW -->
+        <section id="view-status" class="view" aria-label="Status">
+          <div id="status-cards" class="status"></div>
+          <div class="spacer"></div>
+        </section>
+      </main>
+
+      <footer class="bottombar" aria-label="Actions">
+        <button id="btn-bookmark" class="btn btn--ghost" type="button">Bookmark</button>
+        <button id="btn-comment" class="btn btn--ghost" type="button">Comment</button>
+        <button id="btn-next" class="btn btn--primary" type="button">Next</button>
+      </footer>
+    </section>
+  </div>
+
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

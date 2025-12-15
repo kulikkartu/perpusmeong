@@ -1,0 +1,17 @@
+{
+  "story_id": 1,
+  "version_or_hash": "2025-12-14 22:27:20.160000",
+  "chunks": [
+    {
+      "id": "chunk_000",
+      "path": "content/packs/1/2025-12-14 22:27:20.160000/chunk_000.json"
+    }
+  ],
+  "pointers": {
+    "variables": "chunk_000",
+    "status": "chunk_000"
+  },
+  "stage_map": {
+    "1": "chunk_000"
+  }
+}
