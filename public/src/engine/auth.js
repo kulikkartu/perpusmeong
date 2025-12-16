@@ -14,10 +14,12 @@ export function Auth(){
 
     // TODO: Replace with your Firebase config
     const firebaseConfig = window.__FIREBASE_CONFIG__ || {
-      apiKey: "REPLACE_ME",
-      authDomain: "REPLACE_ME",
-      projectId: "REPLACE_ME",
-      appId: "REPLACE_ME",
+      apiKey: "AIzaSyDdI92XPHbXHWs0aSODXWkmwQ8KvLK9sQo",
+      authDomain: "perpusmeong-4e27a.firebaseapp.com",
+      projectId: "perpusmeong-4e27a",
+      storageBucket: "perpusmeong-4e27a.firebasestorage.app",
+      messagingSenderId: "619308159928",
+      appId: "1:619308159928:web:34742472ea6ab96dfbf54d"
     };
 
     app = fbApp.initializeApp(firebaseConfig);
