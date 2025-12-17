@@ -125,9 +125,17 @@ export function ReaderController({ loader, store, onExit }){
       if (selection.has(k)) selection.delete(k);
       else selection.add(k);
     }
-    // preview update
-    renderPreview([optObj]);
-    el('btn-next').disabled = (mode === 'sa' && selection.size !== 1);
+
+    // Re-render options so SA unselects others and marker icons stay consistent.
+    const { event, options } = current();
+    if (event){
+      renderEvent(event, options, { mode, selected: selection });
+      // Preview should only include currently valid options.
+      const selectedOpts = options.filter(o => selection.has(String(o.option ?? o.id ?? o.option_id)));
+      renderPreview(selectedOpts);
+      // SA must have exactly 1 if options exist. MA can be empty / 1+.
+      el('btn-next').disabled = (mode === 'sa' && options.length > 0 && selection.size !== 1);
+    }
   }
 
   function advance(){
