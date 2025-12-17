@@ -37,7 +37,7 @@ export function Resolver(){
 
   function pickEvent(stageObj, state){
     const events = (stageObj?.events || []).slice().sort(byStepThenBranch);
-    // select first event whose condition matches and whose step/branch are >= current? We'll match exact step/branch if provided.
+    // 1) Prefer exact match on current _step/_branch when event defines them.
     for (const ev of events){
       if (ev.condition_ir && !rt.evalCondition(ev.condition_ir, state)) continue;
 
@@ -50,7 +50,16 @@ export function Resolver(){
       if (stepOk && branchOk) return ev;
     }
 
-    // fallback: first condition-true
+    // 2) If no exact match, pick the first condition-true event at or after current step.
+    const curStep = Number(state._step ?? 0);
+    for (const ev of events){
+      if (ev.condition_ir && !rt.evalCondition(ev.condition_ir, state)) continue;
+      const evStep = ev._step != null ? Number(ev._step) : null;
+      if (curStep > 0 && evStep !== null && evStep < curStep) continue;
+      return ev;
+    }
+
+    // 3) Final fallback: first condition-true (even if step is behind)
     for (const ev of events){
       if (!ev.condition_ir || rt.evalCondition(ev.condition_ir, state)) return ev;
     }
