@@ -12,6 +12,23 @@ export function ReaderController({ loader, store, onExit }){
   let selection = new Set(); // option ids
   let activeEventKey = null;
 
+  function makeEventKey(event){
+    return `${ctx.state.stage}:${event?._step ?? ''}:${event?._branch ?? ''}:${event?.id ?? event?.title ?? ''}`;
+  }
+
+  function ensureProgress(prev){
+    const prevStage = Number(prev.stage);
+    const prevStep = Number(prev.step);
+    const curStage = Number(ctx.state.stage);
+    const curStep = Number(ctx.state._step);
+
+    // Only auto-advance within the same stage, and only when step remains unchanged.
+    // Respect explicit flow control (stage change, _step=0, or any effect that alters _step).
+    if (prevStage === curStage && prevStep > 0 && curStep === prevStep){
+      ctx.state._step = prevStep + 1;
+    }
+  }
+
   function wireUi(){
     el('btn-back').onclick = () => onExit?.();
 
@@ -66,8 +83,11 @@ export function ReaderController({ loader, store, onExit }){
     }
 
     const mode = resolver.getAnswerMode(event);
-    selection = new Set(); // reset on event change
-    activeEventKey = `${ctx.state.stage}:${event._step ?? ''}:${event._branch ?? ''}:${event.id ?? event.title ?? ''}`;
+    const nextKey = makeEventKey(event);
+    if (nextKey !== activeEventKey){
+      selection = new Set(); // reset only when event changes
+      activeEventKey = nextKey;
+    }
 
     // Hidden mode: do not render event; execute automatically and move forward until non-hidden or stop.
     if (mode === 'hidden'){
@@ -86,7 +106,7 @@ export function ReaderController({ loader, store, onExit }){
     } else {
       renderPreview([]);
       // SA requires exactly 1 selected to enable next
-      el('btn-next').disabled = (mode === 'sa');
+      el('btn-next').disabled = (mode === 'sa' && options.length > 0);
     }
 
     refreshStatus(); // keep status in sync
@@ -121,7 +141,9 @@ export function ReaderController({ loader, store, onExit }){
       return refresh();
     }
 
-    if (mode === 'sa' && selection.size !== 1) return;
+    if (mode === 'sa' && options.length > 0 && selection.size !== 1) return;
+
+    const prev = { stage: ctx.state.stage, step: ctx.state._step };
 
     // apply event-level effects first
     rt.applyEffects(event.effect_ir || [], ctx.state);
@@ -132,25 +154,22 @@ export function ReaderController({ loader, store, onExit }){
       rt.applyEffects(o.effect_ir || [], ctx.state);
     }
 
-    // step progression: if authoring doesn't explicitly change _step, advance _step by 1
-    if (Number(ctx.state._step) > 0 && (!event.effect_ir || event.effect_ir.length === 0) && selectedOpts.every(o => !o.effect_ir || o.effect_ir.length === 0)){
-      ctx.state._step = Number(ctx.state._step) + 1;
-    }
+    // step progression: if effects didn't change _step, advance by 1 to avoid getting stuck.
+    ensureProgress(prev);
 
     refresh();
   }
 
   function processAutoEvent(event, options){
+    const prev = { stage: ctx.state.stage, step: ctx.state._step };
     // event-level effects
     rt.applyEffects(event.effect_ir || [], ctx.state);
     // execute all available options
     for (const o of options){
       rt.applyEffects(o.effect_ir || [], ctx.state);
     }
-    // If nothing changes, advance step to avoid infinite loop
-    if (Number(ctx.state._step) > 0){
-      ctx.state._step = Number(ctx.state._step) + 1;
-    }
+    // If effects didn't change _step, advance by 1 to avoid infinite loop
+    ensureProgress(prev);
   }
 
   // expose hook for view to call onToggleOption
