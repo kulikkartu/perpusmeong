@@ -1,4 +1,4 @@
-import { showLanding, showLibrary, showReader } from './ui/screens.js';
+import { showLanding, showLibrary, showReader, showLoadError, hideLoadError } from './ui/screens.js';
 import { Auth } from './engine/auth.js';
 import { ContentLoader } from './engine/loader.js';
 import { Store } from './engine/state.js';
@@ -80,27 +80,41 @@ async function boot(){
 }
 
 async function startStory(story, { mode }){
-  // Load content pack (manifest + chunk_000) into memory
-  const manifest = await app.loader.loadManifest(story);
-  const chunk = await app.loader.loadChunk(story, manifest, 'chunk_000');
+  try {
+    hideLoadError();
 
-  // Init state
-  const snapshot = (mode === 'continue') ? app.store.loadBookmark(story.story_id) : null;
-  const state = app.store.initState({ story, chunk, snapshot });
+    // Load content pack (manifest + chunk_000) into memory
+    const manifest = await app.loader.loadManifest(story);
+    const chunk = await app.loader.loadChunk(story, manifest, 'chunk_000');
 
-  // Reader controller
-  if (!app.controllers.reader){
-    app.controllers.reader = ReaderController({
-      loader: app.loader,
-      store: app.store,
-      onExit: () => {
-        setScreen('library');
-      }
+    // Init state
+    const snapshot = (mode === 'continue') ? app.store.loadBookmark(story.story_id) : null;
+    const state = app.store.initState({ story, chunk, snapshot });
+
+    // Reader controller
+    if (!app.controllers.reader){
+      app.controllers.reader = ReaderController({
+        loader: app.loader,
+        store: app.store,
+        onExit: () => {
+          setScreen('library');
+        }
+      });
+    }
+    setScreen('reader');
+    showReader();
+    await app.controllers.reader.mount({ story, manifest, chunk, state });
+  } catch (e){
+    // Ensure UI never blank/freeze on missing manifest/chunk or bad schema.
+    console.error('[App] startStory failed', e);
+    setScreen('reader');
+    showReader();
+    showLoadError({
+      message: 'Gagal memuat',
+      detail: (e?.url ? `${e.url}` : '') || String(e?.message || e),
+      onBack: () => setScreen('library'),
     });
   }
-  setScreen('reader');
-  showReader();
-  await app.controllers.reader.mount({ story, manifest, chunk, state });
 }
 
 boot();
