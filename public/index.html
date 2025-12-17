@@ -102,9 +102,14 @@
               <div class="comments__title">Komentar</div>
               <button id="btn-close-comments" class="btn btn--ghost" type="button">Tutup</button>
             </div>
-            <textarea id="comment-box" class="comments__box" placeholder="Tulis catatan/komen..." rows="4"></textarea>
-            <div class="comments__actions">
-              <button id="btn-save-comment" class="btn btn--secondary" type="button">Simpan</button>
+            <div id="comments-list" class="comments__list" aria-label="Daftar komentar"></div>
+
+            <div class="comments__composer" aria-label="Tulis komentar">
+              <input id="comment-author" class="comments__author" type="text" placeholder="Nama (opsional)" />
+              <textarea id="comment-body" class="comments__box" placeholder="Tulis komentar publik..." rows="4"></textarea>
+              <div class="comments__actions">
+                <button id="btn-post-comment" class="btn btn--secondary" type="button">Kirim</button>
+              </div>
             </div>
           </section>
 
