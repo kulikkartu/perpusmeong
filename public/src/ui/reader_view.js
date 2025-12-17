@@ -79,9 +79,26 @@ export function renderPreview(selectedOptions){
   box.classList.remove('hidden');
 
   for (const o of selectedOptions){
+    const title = (o?.title ?? '').toString();
+    const desc = (o?.description ?? '').toString();
+
+    // PDF micro-rules:
+    // - "Title — Desc" only if both exist
+    // - If only one exists, do not render separator
+    const hasTitle = title.trim().length > 0;
+    const hasDesc = desc.trim().length > 0;
+    if (!hasTitle && !hasDesc) continue;
+
     const item = document.createElement('div');
     item.className = 'preview__item';
-    item.innerHTML = `<b>${escapeHtml(o.title || '')}</b> — ${escapeHtml(o.description || '')}`;
+
+    if (hasTitle && hasDesc){
+      item.innerHTML = `<b>${escapeHtml(title)}</b> — ${escapeHtml(desc)}`;
+    } else if (hasTitle){
+      item.innerHTML = `<b>${escapeHtml(title)}</b>`;
+    } else {
+      item.innerHTML = `${escapeHtml(desc)}`;
+    }
     list.appendChild(item);
   }
 }
