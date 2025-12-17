@@ -2,7 +2,12 @@ import { Runtime } from './runtime.js';
 import { Resolver } from './resolver.js';
 
 const LS_PREFIX = 'perpusmeong:bookmark:';
-const LS_COMMENT_PREFIX = 'perpusmeong:comment:';
+const LS_COMMENT_PREFIX = 'perpusmeong:comment:'; // legacy single-note per eventKey
+const LS_COMMENT_THREAD_PREFIX = 'perpusmeong:comments:'; // public thread per story/version/event
+
+function makeThreadKey(storyId, version, eventId){
+  return `${LS_COMMENT_THREAD_PREFIX}${storyId}:${version}:${eventId}`;
+}
 
 export function Store(){
   return {
@@ -17,6 +22,27 @@ export function Store(){
     },
     saveComment(storyId, eventKey, text){
       localStorage.setItem(`${LS_COMMENT_PREFIX}${storyId}:${eventKey}`, text || '');
+    },
+
+    // Public discussion thread per story_id + version + event_id
+    loadCommentThread({ storyId, version, eventId }){
+      const key = makeThreadKey(storyId, version, eventId);
+      try {
+        const raw = localStorage.getItem(key);
+        if (!raw) return { comments: [] };
+        const data = JSON.parse(raw);
+        if (!data || typeof data !== 'object' || !Array.isArray(data.comments)) return { comments: [] };
+        return { comments: data.comments };
+      } catch {
+        return { comments: [] };
+      }
+    },
+    saveCommentThread({ storyId, version, eventId }, thread){
+      const key = makeThreadKey(storyId, version, eventId);
+      const safe = (thread && typeof thread === 'object' && Array.isArray(thread.comments))
+        ? { comments: thread.comments }
+        : { comments: [] };
+      localStorage.setItem(key, JSON.stringify(safe));
     },
     initState({ story, chunk, snapshot }){
       // state is single source of truth; must include stage/_step/_branch
