@@ -16,12 +16,12 @@
   "status": [
     {
       "status": 1,
-      "content": NaN,
+      "content": "",
       "type": "pointers",
       "title": "Perjalanan",
       "description": null,
       "condition": "stage == 2",
-      "source": NaN
+      "source": ""
     },
     {
       "status": 1,
@@ -30,7 +30,7 @@
       "title": "Sekarang jam 3:00 dini hari",
       "description": "masih gelap dan susah melihat jalan",
       "condition": "time == 3",
-      "source": NaN
+      "source": ""
     },
     {
       "status": 1,
@@ -39,7 +39,7 @@
       "title": "Sekarang jam 3:30 dini hari",
       "description": "masih gelap dan susah melihat jalan",
       "condition": "time == 3.5",
-      "source": NaN
+      "source": ""
     },
     {
       "status": 1,
@@ -48,7 +48,7 @@
       "title": "Sekarang jam 4:00 dini hari",
       "description": "masih gelap dan susah melihat jalan",
       "condition": "time == 4",
-      "source": NaN
+      "source": ""
     },
     {
       "status": 1,
@@ -57,7 +57,7 @@
       "title": "Sekarang jam 4:30 subuh",
       "description": "matahari hampir terbit",
       "condition": "time == 4.5",
-      "source": NaN
+      "source": ""
     },
     {
       "status": 1,
@@ -66,7 +66,7 @@
       "title": "Sekarang jam 5:00 subuh",
       "description": "matahari hampir terbit",
       "condition": "time == 5",
-      "source": NaN
+      "source": ""
     },
     {
       "status": 1,
@@ -75,7 +75,7 @@
       "title": "Sekarang jam 5:30 pagi",
       "description": "matahari baru saja terbit",
       "condition": "time == 5.5",
-      "source": NaN
+      "source": ""
     },
     {
       "status": 1,
@@ -84,7 +84,7 @@
       "title": "Sekarang jam 6:00 pagi",
       "description": "matahari baru saja terbit",
       "condition": "time == 6",
-      "source": NaN
+      "source": ""
     },
     {
       "status": 1,
@@ -93,7 +93,7 @@
       "title": "Sekarang jam 6:30 pagi",
       "description": "suasana masih sejuk",
       "condition": "time == 6.5",
-      "source": NaN
+      "source": ""
     },
     {
       "status": 1,
@@ -102,7 +102,7 @@
       "title": "Sekarang jam 7:00 pagi",
       "description": "suasana masih sejuk",
       "condition": "time == 7",
-      "source": NaN
+      "source": ""
     },
     {
       "status": 1,
@@ -111,7 +111,7 @@
       "title": "Sekarang jam 7:30 pagi",
       "description": "suasana masih sejuk",
       "condition": "time == 7.5",
-      "source": NaN
+      "source": ""
     },
     {
       "status": 1,
@@ -120,7 +120,7 @@
       "title": "Sekarang jam 8:00 pagi",
       "description": "suasana sudah ramai",
       "condition": "time == 8",
-      "source": NaN
+      "source": ""
     },
     {
       "status": 1,
@@ -129,7 +129,7 @@
       "title": "Sekarang jam 8:30 pagi",
       "description": "suasana sudah ramai",
       "condition": "time == 8.5",
-      "source": NaN
+      "source": ""
     },
     {
       "status": 1,
@@ -138,7 +138,7 @@
       "title": "Sekarang jam 9:00",
       "description": "matahari mulai terik",
       "condition": "time == 9",
-      "source": NaN
+      "source": ""
     },
     {
       "status": 1,
@@ -147,7 +147,7 @@
       "title": "Sekarang jam 9:30",
       "description": "matahari mulai terik",
       "condition": "time == 9.5",
-      "source": NaN
+      "source": ""
     },
     {
       "status": 1,
@@ -156,7 +156,7 @@
       "title": "Sekarang sudah jam 10:00",
       "description": "pasar sudah mulai sepi",
       "condition": "time == 10",
-      "source": NaN
+      "source": ""
     },
     {
       "status": 1,
@@ -165,7 +165,7 @@
       "title": "Sekarang sudah jam 10:30",
       "description": "pasar sudah mulai sepi",
       "condition": "time == 10.5",
-      "source": NaN
+      "source": ""
     },
     {
       "status": 1,
@@ -174,7 +174,7 @@
       "title": "Sekarang sudah jam 11:00",
       "description": "matahari terik, pasar sudah sepi",
       "condition": "time == 11",
-      "source": NaN
+      "source": ""
     },
     {
       "status": 1,
@@ -183,7 +183,7 @@
       "title": "Perjalanan belum dimulai",
       "description": "tersisa 12 km lagi",
       "condition": "distance < 0.5",
-      "source": NaN
+      "source": ""
     },
     {
       "status": 1,
@@ -192,7 +192,7 @@
       "title": "Kamu sudah melalui 1 km",
       "description": "tersisa 11 km lagi",
       "condition": "distance >= 0.5 && distance < 1.5",
-      "source": NaN
+      "source": ""
     },
     {
       "status": 1,
@@ -201,7 +201,7 @@
       "title": "Kamu sudah melalui 2 km",
       "description": "tersisa 10 km lagi",
       "condition": "distance >= 1.5 && distance < 2.5",
-      "source": NaN
+      "source": ""
     },
     {
       "status": 1,
@@ -210,7 +210,7 @@
       "title": "Kamu sudah melalui 3 km",
       "description": "tersisa 9 km lagi",
       "condition": "distance >= 2.5 && distance < 3.5",
-      "source": NaN
+      "source": ""
     },
     {
       "status": 1,
@@ -219,7 +219,7 @@
       "title": "Kamu sudah melalui 4 km",
       "description": "tersisa 8 km lagi",
       "condition": "distance >= 3.5 && distance < 4.5",
-      "source": NaN
+      "source": ""
     },
     {
       "status": 1,
@@ -228,7 +228,7 @@
       "title": "Kamu sudah melalui 5 km",
       "description": "tersisa 7 km lagi",
       "condition": "distance >= 4.5 && distance < 5.5",
-      "source": NaN
+      "source": ""
     },
     {
       "status": 1,
@@ -237,7 +237,7 @@
       "title": "Kamu sudah melalui 6 km",
       "description": "tersisa 6 km lagi",
       "condition": "distance >= 5.5 && distance < 6.5",
-      "source": NaN
+      "source": ""
     },
     {
       "status": 1,
@@ -246,7 +246,7 @@
       "title": "Kamu sudah melalui 7 km",
       "description": "tersisa 5 km lagi",
       "condition": "distance >= 6.5 && distance < 7.5",
-      "source": NaN
+      "source": ""
     },
     {
       "status": 1,
@@ -255,7 +255,7 @@
       "title": "Kamu sudah melalui 8 km",
       "description": "tersisa 4 km lagi",
       "condition": "distance >= 7.5 && distance < 8.5",
-      "source": NaN
+      "source": ""
     },
     {
       "status": 1,
@@ -264,7 +264,7 @@
       "title": "Kamu sudah melalui 9 km",
       "description": "tersisa 3 km lagi",
       "condition": "distance >= 8.5 && distance < 9.5",
-      "source": NaN
+      "source": ""
     },
     {
       "status": 1,
@@ -273,7 +273,7 @@
       "title": "Kamu sudah melalui 10 km",
       "description": "tersisa 2 km lagi",
       "condition": "distance >= 9.5 && distance < 10.5",
-      "source": NaN
+      "source": ""
     },
     {
       "status": 1,
@@ -282,7 +282,7 @@
       "title": "Kamu sudah melalui 11 km",
       "description": "sedikit lagi sampai",
       "condition": "distance >= 10.5 && distance < 12",
-      "source": NaN
+      "source": ""
     },
     {
       "status": 1,
@@ -291,7 +291,7 @@
       "title": "Kamu sudah melalui 12 km",
       "description": "sudah sampai",
       "condition": "distance >= 12",
-      "source": NaN
+      "source": ""
     },
     {
       "status": 1,
@@ -300,7 +300,7 @@
       "title": "seharusnya waktu cukup",
       "description": null,
       "condition": "(12 - distance)/3 < (9 - time)",
-      "source": NaN
+      "source": ""
     },
     {
       "status": 1,
@@ -309,16 +309,16 @@
       "title": "ini sudah sangat terlambat",
       "description": null,
       "condition": "(12 - distance)/4 > (10 - time)",
-      "source": NaN
+      "source": ""
     },
     {
       "status": 2,
-      "content": NaN,
+      "content": "",
       "type": "pointers",
       "title": "Kondisi",
       "description": null,
       "condition": "stage == 2",
-      "source": NaN
+      "source": ""
     },
     {
       "status": 2,
@@ -327,7 +327,7 @@
       "title": "Anak terluka",
       "description": null,
       "condition": "child_damage > 0 && child_stamina >1 && child_active == 1",
-      "source": NaN
+      "source": ""
     },
     {
       "status": 2,
@@ -336,7 +336,7 @@
       "title": "Anak kelelahan",
       "description": null,
       "condition": "child_damage = 0 && child_stamina <=1 && child_active == 1",
-      "source": NaN
+      "source": ""
     },
     {
       "status": 2,
@@ -345,7 +345,7 @@
       "title": "Anak terluka dan kelelahan",
       "description": null,
       "condition": "child_damage > 0 && child_stamina <=1 && child_active == 1",
-      "source": NaN
+      "source": ""
     },
     {
       "status": 2,
@@ -354,7 +354,7 @@
       "title": "Anak tumbang, tidak sadarkan diri.",
       "description": null,
       "condition": "child_active == 0",
-      "source": NaN
+      "source": ""
     },
     {
       "status": 2,
@@ -363,7 +363,7 @@
       "title": "Ayah terluka",
       "description": null,
       "condition": "father_damage > 0 && father_stamina >1 && father_active == 1",
-      "source": NaN
+      "source": ""
     },
     {
       "status": 2,
@@ -372,7 +372,7 @@
       "title": "Ayah kelelahan",
       "description": null,
       "condition": "father_damage = 0 && father_stamina <=1 && father_active == 1",
-      "source": NaN
+      "source": ""
     },
     {
       "status": 2,
@@ -381,7 +381,7 @@
       "title": "Ayah terluka dan kelelahan",
       "description": null,
       "condition": "father_damage > 0 && father_stamina <=1 && father_active == 1",
-      "source": NaN
+      "source": ""
     },
     {
       "status": 2,
@@ -390,7 +390,7 @@
       "title": "Ayah tumbang, tidak sadarkan diri.",
       "description": null,
       "condition": "father_active == 0",
-      "source": NaN
+      "source": ""
     },
     {
       "status": 2,
@@ -399,7 +399,7 @@
       "title": "Keledai terluka",
       "description": null,
       "condition": "donkey_damage > 0 && donkey_stamina >1 && donkey_active == 1",
-      "source": NaN
+      "source": ""
     },
     {
       "status": 2,
@@ -408,7 +408,7 @@
       "title": "Keledai kelelahan",
       "description": null,
       "condition": "donkey_damage = 0 && donkey_stamina <=1 && donkey_active == 1",
-      "source": NaN
+      "source": ""
     },
     {
       "status": 2,
@@ -417,7 +417,7 @@
       "title": "Keledai terluka dan kelelahan",
       "description": null,
       "condition": "donkey_damage > 0 && donkey_stamina <=1 && donkey_active == 1",
-      "source": NaN
+      "source": ""
     },
     {
       "status": 2,
@@ -426,7 +426,7 @@
       "title": "Keledai tumbang, tidak sadarkan diri.",
       "description": null,
       "condition": "donkey_active == 0",
-      "source": NaN
+      "source": ""
     }
   ],
   "stages": {
