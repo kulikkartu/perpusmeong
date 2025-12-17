@@ -41,10 +41,12 @@ export function renderEvent(event, options, { mode, selected }){
     pill.className = 'option-pill' + (selected.has(k) ? ' option-pill--selected' : '');
     pill.dataset.optId = k;
 
-    const markChar = mode === 'ma' ? (selected.has(k) ? '✓' : '') : (selected.has(k) ? '●' : '○');
+    const isSel = selected.has(k);
+    const markChar = (mode === 'ma') ? (isSel ? '☑' : '☐') : (isSel ? '●' : '○');
+    const markCls = 'option-pill__mark' + (mode === 'ma' ? ' option-pill__mark--box' : '');
 
     pill.innerHTML = `
-      <div class="option-pill__mark" aria-hidden="true">${markChar}</div>
+      <div class="${markCls}" aria-hidden="true">${markChar}</div>
       <div class="option-pill__text">
         <div class="option-pill__title">${escapeHtml(o.title || `Option ${k}`)}</div>
         <p class="option-pill__desc">${escapeHtml(o.description || '')}</p>
@@ -54,8 +56,6 @@ export function renderEvent(event, options, { mode, selected }){
     if (isInteractive){
       pill.addEventListener('click', () => {
         window.__PM_ON_TOGGLE_OPTION__?.(optId, o, mode);
-        // re-render selection visuals quickly
-        pill.classList.toggle('option-pill--selected');
       });
     } else {
       // auto mode: show as non-interactive; selection rendered elsewhere
